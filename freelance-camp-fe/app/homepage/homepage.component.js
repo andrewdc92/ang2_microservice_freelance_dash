@@ -8,18 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var HomepageComponent = (function () {
+    //selector- what the app references throughout
+    // template- can use template OR templateURL- view files.
     function HomepageComponent() {
     }
-    HomepageComponent = __decorate([
-        core_1.Component({
-            selector: 'main-app',
-            template: '<h1>Freelance Bootcamp Homepage</h1>'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], HomepageComponent);
     return HomepageComponent;
 }());
+HomepageComponent = __decorate([
+    core_1.Component({
+        selector: 'homepage',
+        template: '<h1>Home</h1>'
+    }),
+    __metadata("design:paramtypes", [])
+], HomepageComponent);
 exports.HomepageComponent = HomepageComponent;
 //# sourceMappingURL=homepage.component.js.map

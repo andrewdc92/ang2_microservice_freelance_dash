@@ -1,19 +1,26 @@
 import { NgModule } from '@angular/core';
+//ng module is class decorator- a way of wrapping metadata around classes
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HomepageComponent } from './homepage.component';
+import { AppComponent } from './app.component';
+import { HomepageComponent } from './homepage/homepage.component';
+//angular is far from rails- won't load every component automatically, remember
+// module pattern in JS (similiar to React, MEN stack)
 
 @NgModule({
 	imports: [
 		BrowserModule
 	],
 	declarations: [
+		AppComponent,
 		HomepageComponent
 	],
 	bootstrap: [
-		HomepageComponent
+		AppComponent
 	]
 })
+
+//bootstrap is related to startup, not css framework :)
 export class AppModule {}
 
 // this file is absolutely necessary, no logic, just helps manage the components
