@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var proposal_1 = require("./proposal");
+var core_1 = require('@angular/core');
+var proposal_1 = require('./proposal');
 var ProposalListComponent = (function () {
     function ProposalListComponent() {
         this.proposalOne = new proposal_1.Proposal(15, 'company1', 'https://andrewdc92.github.io', 'Ruby on Rails', 100, 120, 4, 'andrew@example.com');
@@ -25,15 +25,15 @@ var ProposalListComponent = (function () {
             this.proposalFour
         ];
     }
+    ProposalListComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'proposal-list',
+            templateUrl: 'proposal-list.component.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ProposalListComponent);
     return ProposalListComponent;
 }());
-ProposalListComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'proposal-list',
-        templateUrl: 'proposal-list.component.html'
-    }),
-    __metadata("design:paramtypes", [])
-], ProposalListComponent);
 exports.ProposalListComponent = ProposalListComponent;
 //# sourceMappingURL=proposal-list.component.js.map

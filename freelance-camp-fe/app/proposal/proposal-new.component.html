@@ -1,0 +1,23 @@
+<h1> Create a proposal </h1>
+
+<div>
+  <form #proposalForm="ngForm">
+    <div class="form-group">
+      <label for="customer">Customer Name</label>
+      <input type="text"
+            id="customer"
+            placeholder="ABCE company"
+            required
+            name="customer"
+            #customer= 'ngModel'
+            [(ngModel)]= "proposal.customer"
+      >
+      <!-- connect to ngModel, [()] sets the value -->
+      <!-- updates view to update inputted name! -->
+    </div>
+  </form>
+</div>
+
+<div>
+  {{proposal.customer}}
+</div>

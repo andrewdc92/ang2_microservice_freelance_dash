@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 //ng module is class decorator- a way of wrapping metadata around classes. takes a
 //metadata object that tells Angular how to compile and launch the application
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ProposalListComponent } from './proposal/proposal-list.component';
-
+import { ProposalNewComponent } from './proposal/proposal-new.component';
 
 import { AppRoutingModule } from './app-routing-module';
 
@@ -18,13 +19,15 @@ import { AppRoutingModule } from './app-routing-module';
 @NgModule({
 	imports: [
 		BrowserModule,
-		AppRoutingModule
+		AppRoutingModule,
+		FormsModule
 	],
 	declarations: [
 		AppComponent,
 		HomepageComponent,
 		DocumentsComponent,
-		ProposalListComponent
+		ProposalListComponent,
+		ProposalNewComponent
 	],
 	bootstrap: [
 		AppComponent
