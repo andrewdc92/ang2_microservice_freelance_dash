@@ -9,18 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HomepageComponent = (function () {
-    function HomepageComponent() {
+//adds decorator metadata- you can add metadata without defining it in the class itself
+var DocumentsComponent = (function () {
+    function DocumentsComponent() {
     }
-    HomepageComponent = __decorate([
+    DocumentsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'homepage',
-            templateUrl: 'homepage.component.html'
+            selector: 'documents',
+            templateUrl: 'documents.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], HomepageComponent);
-    return HomepageComponent;
+    ], DocumentsComponent);
+    return DocumentsComponent;
 }());
-exports.HomepageComponent = HomepageComponent;
-//# sourceMappingURL=homepage.component.js.map
+exports.DocumentsComponent = DocumentsComponent;
+//# sourceMappingURL=documents.component.js.map

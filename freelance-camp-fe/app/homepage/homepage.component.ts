@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 @Component({
+  moduleId: module.id,
   selector: 'homepage',
-  template: '<h1>Home</h1>'
+  templateUrl: 'homepage.component.html'
 })
 //selector- what the app references throughout
 // template- can use template OR templateURL- view files.

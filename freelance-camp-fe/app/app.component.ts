@@ -4,13 +4,7 @@ import { Component } from '@angular/core';
   //NEED to add moduleId with any component that will handle data, if not, err won't be clear
   moduleId: module.id,
   selector: 'app',
-  template: `
-
-  <h1>Navigation</h1>
-
-  <router-outlet></router-outlet>
-
-  `
+  templateUrl: 'app.component.html' 
 })
 
 export class AppComponent {

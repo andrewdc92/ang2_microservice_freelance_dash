@@ -17,7 +17,7 @@ var AppComponent = (function () {
             //NEED to add moduleId with any component that will handle data, if not, err won't be clear
             moduleId: module.id,
             selector: 'app',
-            template: "\n\n  <h1>Navigation</h1>\n\n  <router-outlet></router-outlet>\n\n  "
+            templateUrl: 'app.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
