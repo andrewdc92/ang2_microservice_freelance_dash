@@ -8,46 +8,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 //ng module is class decorator- a way of wrapping metadata around classes. takes a
 //metadata object that tells Angular how to compile and launch the application
-var platform_browser_1 = require("@angular/platform-browser");
-var forms_1 = require("@angular/forms");
-var app_component_1 = require("./app.component");
-var homepage_component_1 = require("./homepage/homepage.component");
-var documents_component_1 = require("./documents/documents.component");
-var proposal_list_component_1 = require("./proposal/proposal-list.component");
-var proposal_new_component_1 = require("./proposal/proposal-new.component");
-var app_routing_module_1 = require("./app-routing-module");
+var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
+var app_component_1 = require('./app.component');
+var homepage_component_1 = require('./homepage/homepage.component');
+var documents_component_1 = require('./documents/documents.component');
+var proposal_list_component_1 = require('./proposal/proposal-list.component');
+var proposal_new_component_1 = require('./proposal/proposal-new.component');
+var app_routing_module_1 = require('./app-routing-module');
 //angular is far from rails- won't load every component automatically, remember
 // module pattern in JS (similiar to React, MEN stack)
 //import array below is different than importing js modules, only import Ngmodule in app.module
 var AppModule = (function () {
-    //bootstrap is related to startup, not css framework :)
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                app_routing_module_1.AppRoutingModule,
+                forms_1.FormsModule
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                homepage_component_1.HomepageComponent,
+                documents_component_1.DocumentsComponent,
+                proposal_list_component_1.ProposalListComponent,
+                proposal_new_component_1.ProposalNewComponent
+            ],
+            bootstrap: [
+                app_component_1.AppComponent
+            ]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            app_routing_module_1.AppRoutingModule,
-            forms_1.FormsModule
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            homepage_component_1.HomepageComponent,
-            documents_component_1.DocumentsComponent,
-            proposal_list_component_1.ProposalListComponent,
-            proposal_new_component_1.ProposalNewComponent
-        ],
-        bootstrap: [
-            app_component_1.AppComponent
-        ]
-    }),
-    __metadata("design:paramtypes", [])
-], AppModule);
 exports.AppModule = AppModule;
 // this file is absolutely necessary, no logic, just helps manage the components
 //# sourceMappingURL=app.module.js.map
