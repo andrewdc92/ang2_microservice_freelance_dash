@@ -1,0 +1,1 @@
+{"version":3,"file":"proposal-show.component.js","sourceRoot":"","sources":["proposal-show.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAAyB,eAAe,CAAC,CAAA;AAQzC;IAAA;IAAoC,CAAC;IANrC;QAAC,gBAAS,CAAC;YACT,QAAQ,EAAE,MAAM,CAAC,EAAE;YACnB,QAAQ,EAAE,eAAe;YACzB,WAAW,EAAE,8BAA8B;SAC5C,CAAC;;6BAAA;IAEkC,4BAAC;AAAD,CAAC,AAArC,IAAqC;AAAxB,6BAAqB,wBAAG,CAAA"}
