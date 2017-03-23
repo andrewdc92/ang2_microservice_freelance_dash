@@ -12,20 +12,25 @@
             #customer= 'ngModel'
             [(ngModel)]= "proposal.customer"
       >
-      <!-- connect to ngModel, [()] sets the value -->
-      <!-- updates view to update inputted name! -->
+      <!-- connect to ngModel, [()] sets the value, updates view b/c of 2 way data binding  -->
+      <div [hidden]= "customer.valid || customer.pristine">
+        Customer name is required
+      </div>
     </div>
 
     <div class="form-group">
-      <label for="portfolio_url">Portfolio URL</label>
-      <input type="text"
-            id="portfolio_url"
-            required
-            name="portfolio_url"
-            #portfolio_url= 'ngModel'
-            [(ngModel)]= "proposal.portfolio_url"
-      >
-    </div>
+			<label for="portfolio_url">Portfolio URL</label>
+			<input type="text"
+							id="portfolio_url"
+							required
+							name="portfolio_url"
+							#portfolio_url='ngModel'
+							[(ngModel)]="proposal.portfolio_url"
+			>
+      <div [hidden]= "portfolio_url.valid || portfolio_url.pristine">
+        portfolio_url is required
+      </div>
+		</div>
 
     <div class="form-group">
       <label for="tools">Tools that you'll use on the project</label>
@@ -34,9 +39,12 @@
             placeholder="Ruby on Rails, Angular 2, Postgres"
             required
             name="tools"
-            #portfolio_url= 'ngModel'
+            #tools= 'ngModel'
             [(ngModel)]= "proposal.tools"
       >
+      <div [hidden]= "tools.valid || tools.pristine">
+      tools are required
+      </div>
     </div>
 
     <div class="form-group">
@@ -45,9 +53,12 @@
             id="estimated_hours"
             required
             name="estimated_hours"
-            #portfolio_url= 'ngModel'
+            #estimated_hours= 'ngModel'
             [(ngModel)]= "proposal.estimated_hours"
       >
+      <div [hidden]= "estimated_hours.valid || estimated_hours.pristine">
+        estimated_hours are required
+      </div>
     </div>
 
       <div class="form-group">
@@ -56,9 +67,12 @@
               id="hourly_rate"
               required
               name="hourly_rate"
-              #portfolio_url= 'ngModel'
+              #hourly_rate= 'ngModel'
               [(ngModel)]= "proposal.hourly_rate"
         >
+        <div [hidden]= "hourly_rate.valid || hourly_rate.pristine">
+          hourly_rate is required
+        </div>
       </div>
 
         <div class="form-group">
@@ -67,7 +81,7 @@
                 id="weeks_to_complete"
                 required
                 name="weeks_to_complete"
-                #portfolio_url= 'ngModel'
+                #weeks_to_complete= 'ngModel'
                 [(ngModel)]= "proposal.weeks_to_complete"
           >
         </div>
@@ -77,7 +91,7 @@
             <input type="email"
                   id="client_email"
                   name="client_email"
-                  #portfolio_url= 'ngModel'
+                  #client_email= 'ngModel'
                   [(ngModel)]= "proposal.client_email"
             >
           </div>
