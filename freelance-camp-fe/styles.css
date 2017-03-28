@@ -2,10 +2,10 @@ body {
   background-color: #c0ffee;
 }
 
-.navbar-nav .nav-link {
+/*li {
   display: inline-block;
-}
+}*/
 
-li {
+li, ul {
   display: inline;
 }
