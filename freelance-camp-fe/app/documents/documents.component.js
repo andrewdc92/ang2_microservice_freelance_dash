@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 //adds decorator metadata- you can add metadata without defining it in the class itself
 //ex of why it's useful- html view has access to pageTitle, since its all wrapped up under documents.component
 var DocumentsComponent = (function () {
@@ -52,15 +52,16 @@ var DocumentsComponent = (function () {
             },
         ];
     }
-    DocumentsComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'documents',
-            templateUrl: 'documents.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], DocumentsComponent);
     return DocumentsComponent;
 }());
+DocumentsComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'documents',
+        templateUrl: 'documents.component.html',
+        styleUrls: ['documents.component.css']
+    }),
+    __metadata("design:paramtypes", [])
+], DocumentsComponent);
 exports.DocumentsComponent = DocumentsComponent;
 //# sourceMappingURL=documents.component.js.map
