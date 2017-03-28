@@ -8,22 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var proposal_1 = require('./proposal');
+var core_1 = require("@angular/core");
+var proposal_1 = require("./proposal");
 var ProposalNewComponent = (function () {
     function ProposalNewComponent() {
         this.proposal = new proposal_1.Proposal;
     }
-    ProposalNewComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'proposal-new',
-            templateUrl: 'proposal-new.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ProposalNewComponent);
     return ProposalNewComponent;
 }());
+ProposalNewComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'proposal-new',
+        templateUrl: 'proposal-new.component.html',
+        styleUrls: ['proposal-new.component.css']
+    }),
+    __metadata("design:paramtypes", [])
+], ProposalNewComponent);
 exports.ProposalNewComponent = ProposalNewComponent;
 //creates new instance of proposal, since a new one will be generated with form input each time
 //# sourceMappingURL=proposal-new.component.js.map
