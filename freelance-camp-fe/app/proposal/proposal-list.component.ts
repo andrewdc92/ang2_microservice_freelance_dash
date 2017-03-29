@@ -4,7 +4,8 @@ import {Proposal } from './proposal';
 @Component({
   moduleId: module.id,
   selector: 'proposal-list',
-  templateUrl: 'proposal-list.component.html'
+  templateUrl: 'proposal-list.component.html',
+  styleUrls: ['proposal-list.component.css']
 })
 
 export class ProposalListComponent {
@@ -19,7 +20,7 @@ export class ProposalListComponent {
 
           //an array of the Proposal data type, need to reference this
           // to update with the most current instance of the proposal
-          
+
   proposals: Proposal[] = [
     this.proposalOne,
     this.proposalTwo,
