@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var ProposalShowComponent = (function () {
     //ahh dependency injection...hello old friend
     function ProposalShowComponent(route) {
@@ -22,17 +22,17 @@ var ProposalShowComponent = (function () {
         } //takes URL params, which is actually a string, and converts to usable int
         );
     };
+    ProposalShowComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'proposal-show',
+            templateUrl: 'proposal-show.component.html',
+            styleUrls: ['proposal-show.component.css']
+        }), 
+        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+    ], ProposalShowComponent);
     return ProposalShowComponent;
 }());
-ProposalShowComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'proposal-show',
-        templateUrl: 'proposal-show.component.html',
-        styleUrls: ['proposal-show.component.css']
-    }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
-], ProposalShowComponent);
 exports.ProposalShowComponent = ProposalShowComponent;
 //captures route id on page load
 //# sourceMappingURL=proposal-show.component.js.map
