@@ -33,7 +33,7 @@ export class DocumentsComponent implements OnInit {
   getDocuments() {
     this.documentService.getDocuments()
         .subscribe(
-        documents => this.documents = documents
+        documents => this.documents = documents,
         error => this.errorMessage = <any>error
       );
   }
