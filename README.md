@@ -5,7 +5,7 @@ You can draft up, organize, and email client proposals for freelance web design 
 
 Front end is pretty much complete- currently getting the backend and Postgres db configured. 
 
-To Use:
+To Use-
 
 > Clone the repo
 > 'cd' into 'freelance-frontend'
