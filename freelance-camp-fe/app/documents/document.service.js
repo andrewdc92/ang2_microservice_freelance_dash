@@ -8,20 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-var Observable_1 = require("rxjs/Observable");
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+var Rx_1 = require('rxjs/Rx');
 var DocumentService = (function () {
     function DocumentService(http) {
         this.http = http;
-        this.documentsUrl = "http://localhost:3001/freelance_documents.json";
+        this.documentsUrl = "http://localhost:3001/freelance_documents";
     }
     DocumentService.prototype.getDocuments = function () {
         return this.http.get(this.documentsUrl)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
         //connects to API, it's the angular datatype Response
-        //maps the response data to match the document.ts interface
+        //maps the response data to match the document.ts interface, just like basic templating.
+        // the headers/keys of response data must match document interface (the front end schema)
     };
     DocumentService.prototype.handleError = function (error) {
         // In a real world app, you might use a remote logging infrastructure
@@ -35,14 +36,14 @@ var DocumentService = (function () {
             errMsg = error.message ? error.message : error.toString();
         }
         console.error(errMsg);
-        return Observable_1.Observable.throw(errMsg);
+        return Rx_1.Observable.throw(errMsg);
     };
+    DocumentService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], DocumentService);
     return DocumentService;
 }());
-DocumentService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], DocumentService);
 exports.DocumentService = DocumentService;
 //set to whatever the URL query is. the constructor creates the http connection
 //# sourceMappingURL=document.service.js.map

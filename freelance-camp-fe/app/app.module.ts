@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 //metadata object that tells Angular how to compile and launch the application
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule} from '@angular/forms';
+import { HttpModule} from '@angular/http';
+
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -27,7 +29,8 @@ import { AppRoutingModule } from './app-routing-module';
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
-		NgbModule.forRoot()
+		NgbModule.forRoot(),
+		HttpModule
 	],
 	declarations: [
 		AppComponent,
