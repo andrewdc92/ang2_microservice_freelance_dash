@@ -9,30 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var proposal_1 = require('./proposal');
+var Rx_1 = require('rxjs/Rx');
+var proposal_service_1 = require('./proposal.service');
 var ProposalListComponent = (function () {
-    function ProposalListComponent() {
-        this.proposalOne = new proposal_1.Proposal(15, 'company1', 'https://andrewdc92.github.io', 'Ruby on Rails', 100, 120, 4, 'andrew@example.com');
-        this.proposalTwo = new proposal_1.Proposal(99, 'company2', 'https://andrewdc92.github.io', 'Ruby on Rails', 100, 120, 4, 'andrew@example.com');
-        this.proposalThree = new proposal_1.Proposal(300, 'company3', 'https://andrewdc92.github.io', 'Ruby on Rails', 100, 120, 4, 'andrew@example.com');
-        this.proposalFour = new proposal_1.Proposal(411, 'company4', 'https://andrewdc92.github.io', 'Ruby on Rails', 100, 120, 4, 'andrew@example.com');
-        //an array of the Proposal data type, need to reference this
-        // to update with the most current instance of the proposal
-        this.proposals = [
-            this.proposalOne,
-            this.proposalTwo,
-            this.proposalThree,
-            this.proposalFour
-        ];
+    function ProposalListComponent(proposalService) {
+        this.proposalService = proposalService;
+        this.mode = "Observable";
     }
+    ProposalListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var timer = Rx_1.Observable.timer(0, 5000);
+        timer.subscribe(function () { return _this.getProposals(); });
+        //first arg means the onInit fn fires immediatley, can set initial buffer, second arg is interval between calls
+    };
+    ProposalListComponent.prototype.getProposals = function () {
+        var _this = this;
+        this.proposalService.getProposals()
+            .subscribe(function (proposals) { return _this.proposals = proposals; }, function (error) { return _this.errorMessage = error; });
+    };
     ProposalListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'proposal-list',
             templateUrl: 'proposal-list.component.html',
-            styleUrls: ['proposal-list.component.css']
+            styleUrls: ['proposal-list.component.css'],
+            providers: [proposal_service_1.ProposalService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [proposal_service_1.ProposalService])
     ], ProposalListComponent);
     return ProposalListComponent;
 }());
