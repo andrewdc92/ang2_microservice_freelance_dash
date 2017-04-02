@@ -10,18 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var http_1 = require('@angular/http');
+var proposal_1 = require('./proposal');
+var proposal_service_1 = require('./proposal.service');
 var ProposalShowComponent = (function () {
     //ahh dependency injection...hello old friend
-    function ProposalShowComponent(route) {
+    function ProposalShowComponent(http, proposalService, route) {
+        this.http = http;
+        this.proposalService = proposalService;
         this.route = route;
     }
     ProposalShowComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.routeId = this.route.params.subscribe(function (params) {
-            _this.id = +params['id'];
-        } //takes URL params, which is actually a string, and converts to usable int
-        );
+        var proposalRequest = this.route.params
+            .flatMap(function (params) {
+            return _this.proposalService.getProposal(+params['id']);
+        });
+        proposalRequest.subscribe(function (response) { return _this.proposal = response.json(); });
+        //the '+' takes URL params, which is actually a string, and converts to usable int
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', proposal_1.Proposal)
+    ], ProposalShowComponent.prototype, "proposal", void 0);
     ProposalShowComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -29,7 +40,7 @@ var ProposalShowComponent = (function () {
             templateUrl: 'proposal-show.component.html',
             styleUrls: ['proposal-show.component.css']
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [http_1.Http, proposal_service_1.ProposalService, router_1.ActivatedRoute])
     ], ProposalShowComponent);
     return ProposalShowComponent;
 }());

@@ -20,6 +20,11 @@ export class ProposalService {
                       //maps the response data to match the document.ts interface, just like basic templating.
                       // the headers/keys of response data must match document interface (the front end schema)
   }
+
+  getProposal(id:number) {
+    return this.http.get(this.proposalsUrl + '/' + id + '.json');
+  }
+  
   private handleError (error: Response | any) {
     // In a real world app, you might use a remote logging infrastructure
     let errMsg: string;
