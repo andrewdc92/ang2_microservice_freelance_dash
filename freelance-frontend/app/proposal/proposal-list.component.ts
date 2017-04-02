@@ -21,7 +21,7 @@ export class ProposalListComponent implements OnInit {
 
   constructor(
     private proposalService: ProposalService,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -38,7 +38,7 @@ export class ProposalListComponent implements OnInit {
   }
 
   goToShow(proposal: Proposal): void {
-    let link = ['/proposal', proposal.id];
+    let link = ['/proposals', proposal.id];
     this.router.navigate(link);
   }
 }
