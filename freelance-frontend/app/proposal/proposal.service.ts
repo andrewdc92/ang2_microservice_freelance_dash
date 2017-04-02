@@ -21,10 +21,18 @@ export class ProposalService {
                       // the headers/keys of response data must match document interface (the front end schema)
   }
 
-  getProposal(id:number) {
-    return this.http.get(this.proposalsUrl + '/' + id + '.json');
+  getProposal(id: number) {
+    return this.http.get(this.proposalsUrl + "/" + id + '.json');
   }
-  
+  //connects angular API to Rails application, need this to create persistent objects in the db
+  createProposal(proposal) {
+    let headers = new Headers({ 'Content-type': 'application/json'}) // as obvious via Postman, header has to be exact otherwise the post req will hit the err handler
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(this.proposalsUrl, JSON.stringify(proposal), {
+      headers: headers}).map((res: Response) => res.json());
+      //this.proposalsUrl = the API connection, pass in the proposal and turn it into a string
+  }
+
   private handleError (error: Response | any) {
     // In a real world app, you might use a remote logging infrastructure
     let errMsg: string;
